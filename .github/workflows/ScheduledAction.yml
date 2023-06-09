@@ -7,6 +7,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - run: echo "This is my pipeline ${{ github.event_name }} 🎉"
+    - run: echo "This is my pipeline ${{ github.actor }} 🎉"
     - run: echo "This is my branch ${{ github.ref }} 🔎"
-    - run: echo "This is the list of my files ${{github.files}}"
+    - run: echo "This is the list of my files"
+    - name: List files in the repository
+      run: |
+        ls ${{ github.workspace }}
